@@ -1,0 +1,21 @@
+<!-- templates/dashboard.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+    <h2>Dashboard</h2>
+    <a href="{% url 'create_board' %}">Create New Board</a>
+    <ul>
+        {% for board in boards %}
+            <li>
+                <a href="{% url 'whiteboard_detail' slug=board.slug %}">{{ board.title }}</a>
+            </li>
+        {% empty %}
+            <li>No boards yet.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'logout' %}">Logout</a>
+</body>
+</html>

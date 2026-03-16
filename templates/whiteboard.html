@@ -1,0 +1,16 @@
+<!-- templates/whiteboard.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ board.title }}</title>
+</head>
+<body>
+    <h2>{{ board.title }}</h2>
+    <div id="canvas">
+        {% for stroke in strokes %}
+            <p>{{ stroke.data }}</p>
+        {% endfor %}
+    </div>
+    <a href="{% url 'dashboard' %}">Back to Dashboard</a>
+</body>
+</html>
